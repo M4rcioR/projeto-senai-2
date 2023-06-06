@@ -16,25 +16,25 @@
   <div class="d-flex" id="wrapper">
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar-wrapper">
-        <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
-                class="text-center"></i>System Control</div>
-        <div class="list-group list-group-flush my-3">
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text"><i
-                    class="fas fa-tachometer-alt me-2 py-4"></i>Dashboard</a>
+      <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
+              class="text-center"></i>System Control</div>
+      <div class="list-group list-group-flush my-3">
+          <a href="index.html" class="list-group-item list-group-item-action bg-transparent second-text"><i
+                  class="fas fa-tachometer-alt me-2 py-4"></i>Dashboard</a>
 
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i
-                    class="fas fa-solid fa-users me-2 py-4"></i>Clientes</a>
+          <a href="clientes.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i
+                  class="fas fa-solid fa-users me-2 py-4"></i>Clientes</a>
 
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                    class="fas fa-chart-line me-2 py-4"></i>Estoque</a>
+          <a href="estoque.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                  class="fas fa-chart-line me-2 py-4"></i>Estoque</a>
 
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                    class="fas fa-solid fa-building-columns me-2 py-4"></i>Financeiro</a>
+          <a href="financeiro.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                  class="fas fa-solid fa-building-columns me-2 py-4"></i>Financeiro</a>
 
-            <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
-                    class="fas fa-power-off me-2 py-4"></i>Logout</a>
-        </div>
-    </div>
+          <a href="login.html" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
+                  class="fas fa-power-off me-2 py-4"></i>Logout</a>
+      </div>
+  </div>
     <!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
@@ -67,81 +67,62 @@
             </div>
         </nav>
 
-        <div class="container mt-4 text-center">
-            <div class="row">
-              <div class="col-md-6 offset-md-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Perfil</h5>
-                    <form>
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="name" placeholder="Digite seu nome">
-                      </div>
-                      <div class="mb-3">
-                        <label for="email" class="form-label">E-mail</label>
-                        <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail">
-                      </div>
-                      <div class="mb-3">
-                        <label for="password" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="password" placeholder="Digite sua senha">
-                      </div>
-                      <div class="mb-3">
-                        <label for="cpf" class="form-label">CPF</label>
-                        <input type="text" class="form-control" id="cpf" placeholder="Digite seu CPF">
-                      </div>
-                      <div class="mb-3">
-                        <label for="address" class="form-label">Endereço</label>
-                        <input type="text" class="form-control" id="address" placeholder="Digite seu endereço">
-                      </div>
-                      <button type="submit" class="btn btn-primary">Salvar</button>
-                      <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editModal">Editar</button>
-                    </form>
+        <div class="container mt-5">
+          <div class="row justify-content-center">
+            <div class="col-md-4">
+              <div class="card text-center">
+                <img src="./img/user.png" alt="Imagem de perfil" class="card-img-top rounded-circle">
+                <div class="card-body">
+                  <h5 class="card-title">Nome do Usuário</h5>
+                  <p class="card-text">Email: usuario@example.com</p>
+                  <p class="card-text">Telefone: (00) 123456789</p>
+                  <p class="card-text">Endereço: Rua A, 123</p>
+                  <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#editarPerfilModal">Editar Perfil</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Modal de Edição de Perfil -->
+        <div class="modal fade" id="editarPerfilModal" tabindex="-1" aria-labelledby="editarPerfilModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="editarPerfilModalLabel">Editar Perfil</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" value="Nome do Usuário">
                   </div>
-                </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" value="usuario@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="telefone" class="form-label">Telefone</label>
+                    <input type="text" class="form-control" id="telefone" value="(00) 123456789">
+                  </div>
+                  <div class="mb-3">
+                    <label for="endereco" class="form-label">Endereço</label>
+                    <input type="text" class="form-control" id="endereco" value="Rua A, 123">
+                  </div>
+                  <div class="mb-3">
+                    <label for="imagem" class="form-label">Imagem de Perfil</label>
+                    <input type="file" class="form-control" id="imagem">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary">Salvar Alterações</button>
               </div>
             </div>
           </div>
-          
-          <!-- Modal de Edição do Perfil -->
-          <div class="modal fade text-center" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="editModalLabel">Editar Perfil</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="mb-3">
-                      <label for="editName" class="form-label">Nome</label>
-                      <input type="text" class="form-control" id="editName">
-                    </div>
-                    <div class="mb-3">
-                      <label for="editEmail" class="form-label">E-mail</label>
-                      <input type="email" class="form-control" id="editEmail">
-                    </div>
-                    <div class="mb-3">
-                      <label for="editPassword" class="form-label">Senha</label>
-                      <input type="password" class="form-control" id="editPassword">
-                    </div>
-                    <div class="mb-3">
-                      <label for="editCPF" class="form-label">CPF</label>
-                      <input type="text" class="form-control" id="editCPF">
-                    </div>
-                    <div class="mb-3">
-                      <label for="editAddress" class="form-label">Endereço</label>
-                      <input type="text" class="form-control" id="editAddress">
-                    </div>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                  <button type="button" class="btn btn-primary">Salvar</button>
-                </div>
-              </div>
-            </div>
-          </div>
+        </div>
           
     
         </div>
