@@ -69,85 +69,280 @@
 
         <div class="container mt-4">
           <div class="row">
-            <div class="col-md-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Vendas Mensais</h5>
-                  <canvas id="salesChart"></canvas>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Receitas</h5>
+                    <p class="card-text">Total: R$ 5.000</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Receitas e Despesas</h5>
-                  <canvas id="incomeExpenseChart"></canvas>
+              <div class="col-md-6 col-lg-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Despesas</h5>
+                    <p class="card-text">Total: R$ 3.000</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        
-          <div class="row mt-4">
-            <div class="col-md-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Relatório de Vendas</h5>
-                  <table class="table table-responsive text-center">
+              <div class="col-md-6 col-lg-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Lucro</h5>
+                    <p class="card-text">Total: R$ 2.000</p>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <div class="row mt-4">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Relatório de Vendas</h5>
+                      <div class="table-responsive">
+                        <table class="table table-responsive text-center">
+                          <thead>
+                            <tr>
+                              <th>Nome do Produto</th>
+                              <th>Preço</th>
+                              <th>Preço de Venda</th>
+                              <th>Quantidade</th>
+                              <th>Data de Vencimento</th>
+                              <th>Ações</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Produto 1</td>
+                              <td>R$ 10.00</td>
+                              <td>R$ 15.00</td>
+                              <td>50</td>
+                              <td>2023-12-31</td>
+                              <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editModal1"><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Modal de Edição -->
+                <div class="modal fade" id="editModal1" tabindex="-1" aria-labelledby="editModalLabel1" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="editModalLabel1">Editar Produto 1</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="mb-3">
+                            <label for="editNomeProduto1" class="form-label">Nome do Produto</label>
+                            <input type="text" class="form-control" id="editNomeProduto1">
+                          </div>
+                          <div class="mb-3">
+                            <label for="editPreco1" class="form-label">Preço</label>
+                            <input type="text" class="form-control" id="editPreco1">
+                          </div>
+                          <div class="mb-3">
+                            <label for="editPrecoVenda1" class="form-label">Preço de Venda</label>
+                            <input type="text" class="form-control" id="editPrecoVenda1">
+                          </div>
+                          <div class="mb-3">
+                            <label for="editQuantidade1" class="form-label">Quantidade</label>
+                            <input type="text" class="form-control" id="editQuantidade1">
+                          </div>
+                          <div class="mb-3">
+                            <label for="editDataVencimento1" class="form-label">Data de Vencimento</label>
+                            <input type="date" class="form-control" id="dataVencimento1" required>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary">Salvar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                </div>
+
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Clientes Cadastrados</h5>
+                      <div class="table-responsive">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th>Nome</th>
+                              <th>E-mail</th>
+                              <th>CPF/CNPJ</th>
+                              <th>Endereço</th>
+                              <th>Ações</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Cliente 1</td>
+                              <td>cliente1@example.com</td>
+                              <td>123.456.789-00</td>
+                              <td>Rua A, 123</td>
+                              <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editModal1"><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                              </td>
+                            </tr>
+                            <!-- Adicione mais linhas conforme necessário -->
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Modal de Edição -->
+                <div class="modal fade" id="editModal1" tabindex="-1" aria-labelledby="editModalLabel1" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="editModalLabel1">Editar Cliente 1</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="mb-3">
+                            <label for="editNome1" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="editNome1">
+                          </div>
+                          <div class="mb-3">
+                            <label for="editEmail1" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="editEmail1">
+                          </div>
+                          <div class="mb-3">
+                            <label for="editCPFCNPJ1" class="form-label">CPF/CNPJ</label>
+                            <input type="text" class="form-control" id="editCPFCNPJ1">
+                          </div>
+                          <div class="mb-3">
+                            <label for="editEndereco1" class="form-label">Endereço</label>
+                            <input type="text" class="form-control" id="editEndereco1">
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary">Salvar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Financeiro</h5>
+                <div class="table-responsive mt-5">
+                  <table class="table table-striped">
                     <thead>
                       <tr>
-                        <th>Data</th>
-                        <th>Produto</th>
-                        <th>Quantidade</th>
-                        <th>Total</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Cliente e Fornecedor</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Documento</th>
+                        <th scope="col">Valor R$</th>
+                        <th scope="col">Entrada/Saida</th>
+                        <th scope="col">Ações</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>01/05/2023</td>
-                        <td>Produto A</td>
-                        <td>10</td>
-                        <td>R$ 100</td>
+                        <td>20/12/2022</td>
+                        <td>Net On-line</td>
+                        <td>Internet 600</td>
+                        <td>BB</td>
+                        <td>100,00</td>
+                        <td>Saida</td>
+                        <td>
+                          <button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#editModal1"><i class="fa-solid fa-pen-to-square"></i></button>
+                          <a class="btn btn-danger" href="#" role="button"><i class="fa-sharp fa-solid fa-print"></i></a>
+                        </td>
                       </tr>
                       <tr>
-                        <td>02/05/2023</td>
-                        <td>Produto B</td>
-                        <td>5</td>
-                        <td>R$ 75</td>
+                        <td>20/12/2022</td>
+                        <td>Equatorial</td>
+                        <td>Energia</td>
+                        <td>DA</td>
+                        <td>250,00</td>
+                        <td>Saida</td>
+                        <td>
+                          <button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#editModal1"><i class="fa-solid fa-pen-to-square"></i></button>
+                          <a class="btn btn-danger" href="#" role="button"><i class="fa-sharp fa-solid fa-print"></i></a>
+                        </td>
                       </tr>
                       <tr>
-                        <td>03/05/2023</td>
-                        <td>Produto C</td>
-                        <td>8</td>
-                        <td>R$ 200</td>
+                        <td>20/12/2022</td>
+                        <td>Prefeitura</td>
+                        <td>Serviço Prestado</td>
+                        <td>DC</td>
+                        <td>4.500,00</td>
+                        <td>Saida</td>
+                        <td>
+                          <button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#editModal1"><i class="fa-solid fa-pen-to-square"></i></button>
+                          <a class="btn btn-danger" href="#" role="button"><i class="fa-sharp fa-solid fa-print"></i></a>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Resumo Financeiro</h5>
-                  <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                      Receitas
-                      <span class="badge bg-success">R$ 5.000</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                      Despesas
-                      <span class="badge bg-danger">R$ 3.000</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                      Lucro
-                      <span class="badge bg-primary">R$ 2.000</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>     
+                        <!-- Modal de Edição -->
+                        <div class="modal fade" id="editModal1" tabindex="-1" aria-labelledby="editModalLabel1" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="editModalLabel1">Editar</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body text-center">
+                                <form>
+                                  <div class="mb-3">
+                                    <label for="data" class="form-label">Data</label>
+                                    <input type="date" class="form-control" id="data">
+                                  </div>
+                                  <div class="mb-3">
+                                    <label for="cliente" class="form-label">Cliente e Fornecedor</label>
+                                    <input type="text" class="form-control" id="cliente">
+                                  </div>
+                                  <div class="mb-3">
+                                    <label for="descricao" class="form-label">Descrição</label>
+                                    <textarea class="form-control" id="descricao" rows="3"></textarea>
+                                  </div>
+                                  <div class="mb-3">
+                                    <label for="documento" class="form-label">Documento</label>
+                                    <input type="text" class="form-control" id="documento">
+                                  </div>
+                                  <div class="mb-3">
+                                    <label for="valor" class="form-label">Valor (R$)</label>
+                                    <input type="number" class="form-control" id="valor" step="0.01">
+                                  </div>
+                                </form>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                <button type="button" class="btn btn-primary">Salvar</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      </div>
     </div>
 </div>
 
